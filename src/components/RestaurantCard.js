@@ -1,17 +1,21 @@
 import React from "react";
+import { IMG_URL } from "../utils/constant";
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  const { resData } = props;
+  const {name, cuisines, avgRatingString, costForTwo, cloudinaryImageId} = resData.info ;
+
   return (
     <div className="res-card">
       <img
         className="res-logo"
         alt="res-logo"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f01666ac73626461d7455d9c24005cd4"
+        src= {IMG_URL + cloudinaryImageId}
       />
-      <h3>KFC</h3>
-      <h4>Burgers, Biryani</h4>
-      <h4>4.4 Stars</h4>
-      <h4>35 minutes</h4>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRatingString} Stars</h4>
+      <h4>{costForTwo}</h4>
     </div>
   );
 };

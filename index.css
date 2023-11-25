@@ -24,15 +24,16 @@
 }
 
 .res-card{
-    width: 230px;
+    width: 215px;
     background-color: #f0f0f0;
-    padding: 5px;
-    margin: 5px;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 15px;
 }
 
 .res-card:hover{
-    border: 1px solid black;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(42, 36, 36, 0.8);
 }
 
 .search{
@@ -40,8 +41,9 @@
 }
 
 .res-logo{
-    width: 230px;
+    width: 210px;
     height: 180px;
+    border-radius: 15px;
 }
 
 .res-container{
