@@ -1,6 +1,6 @@
 import React from "react";
 import RestaurantCard from "./RestaurantCard";
-import {restaurantList} from '../../swiggyData'
+import {restaurantList} from '../utils/swiggyData'
 
 const Body = () => {
     const resObj =  {

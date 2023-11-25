@@ -1,4 +1,5 @@
 import React from "react";
+import {CDN_URL} from '../utils/constant'
 
 const Header = () => {
   return (
@@ -6,7 +7,7 @@ const Header = () => {
       <div className="logo-container">
         <img
           className="logo"
-          src="https://st4.depositphotos.com/12678588/23473/v/450/depositphotos_234736640-stock-illustration-food-logo-smile-label-food.jpg"
+          src= {CDN_URL}
         />
       </div>
       <div className="nav-items">

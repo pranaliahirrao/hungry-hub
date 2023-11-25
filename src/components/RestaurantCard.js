@@ -1,16 +1,16 @@
 import React from "react";
-import { IMG_URL } from "../utils/constant";
+import { LOGO_URL } from "../utils/constant";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  const {name, cuisines, avgRatingString, costForTwo, cloudinaryImageId} = resData.info ;
+  const {name, cuisines, avgRatingString, costForTwo, cloudinaryImageId} = resData?.info ;
 
   return (
     <div className="res-card">
       <img
         className="res-logo"
         alt="res-logo"
-        src= {IMG_URL + cloudinaryImageId}
+        src= {LOGO_URL + cloudinaryImageId}
       />
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
