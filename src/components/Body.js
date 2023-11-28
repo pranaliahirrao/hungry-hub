@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -16,14 +17,19 @@ const Body = () => {
     // console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
+  // Conditional Rendering
+  if(listOfRestaurants.length === 0){
+    return <Shimmer/>
+  }
+
   return (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = restaurantList.filter(
-              (res) => res.info.avgRating > 4
+            const filteredList = listOfRestaurants.filter(
+              (res) => res.info.avgRating > 4.4
             );
             setListOfRestaurants(filteredList);
           }}
