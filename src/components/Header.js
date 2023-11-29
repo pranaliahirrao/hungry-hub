@@ -2,14 +2,17 @@ import React, { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 // import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   // const onlineStatus = useOnlineStatus();
-
   const {loggedInUser} = useContext(UserContext);
-  console.log(loggedInUser);
+  // console.log(loggedInUser);
+
+  // subscribing to store using selectore
+  const cartItems = useSelector((store) => store.cart.items)
 
   return (
     <div className="flex justify-between shadow-lg bg-gray-50">
@@ -28,7 +31,7 @@ const Header = () => {
           <li className="px-4 hover:drop-shadow-md">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="px-4 hover:drop-shadow-md">Cart</li>
+          <li className="px-4 hover:drop-shadow-md">Cart {cartItems.length} Items</li>
           <button
             className="px-4 hover:drop-shadow-lg"
             onClick={() => {
