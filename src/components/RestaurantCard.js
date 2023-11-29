@@ -1,5 +1,5 @@
 import React from "react";
-import { LOGO_URL } from "../utils/constant";
+import { CDN_URL } from "../utils/constant";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -10,7 +10,7 @@ const RestaurantCard = (props) => {
       <img
         className="rounded-lg h-[170px] w-[260px]"
         alt="res-logo"
-        src= {LOGO_URL + cloudinaryImageId}
+        src= {CDN_URL + cloudinaryImageId}
       />
       <h3  className="font-bold py-3 text-lg">{name}</h3>
       <h4 className="font-bold">{cuisines.join(", ")}</h4>
@@ -20,5 +20,21 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
+
+// Higher Order Component
+// input - RestaurantCard =>> RestaurantCardPromoted
+export const withIsOpenLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-green-500 text-white m-2 p-2 rounded-lg">
+          Open
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
 
 export default RestaurantCard;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CDN_URL } from "../utils/constant";
+import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 // import useOnlineStatus from "../utils/useOnlineStatus";
 
@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div className="flex justify-between shadow-lg bg-gray-50">
       <div className="logo-container">
-        <img className="w-24 pl-4" src={CDN_URL} />
+        <img className="w-24 pl-4" src={LOGO_URL} />
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4 font-bold text-lg">
