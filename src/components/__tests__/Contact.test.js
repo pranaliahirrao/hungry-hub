@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import Contact from "../Contact";
 import "@testing-library/jest-dom";
+import Contact from "../Contact";
 
 describe("Contact Us pages Test cases", () => {
     // it is just alias of test
