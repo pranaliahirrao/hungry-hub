@@ -4,7 +4,8 @@
   "description": "This is React App building from scratch",
   "scripts": {
     "start": "parcel index.html",
-    "test": "jest"
+    "test": "jest",
+    "watch-test": "jest --watch"
   },
   "repository": {
     "type": "git",
